@@ -1,0 +1,208 @@
+# CubeFetch - English
+lang.name=English
+
+app.title=CubeFetch
+app.loading=Loading...
+app.ready=Ready
+
+menu.catalog=Catalog
+menu.queue=Download
+menu.sources=Sources
+menu.settings=Settings
+menu.about=About
+
+net.connecting=Connecting to network...
+net.ok=Connected - IP %s
+net.fail=No network connection
+net.adapter=Adapter: %s
+net.no_adapter=No network adapter found
+net.retry=Retry
+
+store.scanning=Scanning storage devices...
+store.found=%d device(s) found
+store.none=No storage device found
+store.free=%s free
+store.target=Target folder
+store.pick_target=Choose target folder
+store.new_folder=New folder
+store.exi_warning=Network adapter and memory card share one EXI channel. This combination can be unstable - a card in Slot B or an SD2SP2 is recommended.
+
+src.none=No sources defined
+src.add=Add source
+src.edit=Edit
+src.remove=Remove
+src.reload=Reload
+src.enter_url=Enter address
+src.name=Name
+src.type=Type
+src.loaded=%d entries from %d source(s)
+src.load_fail=Could not load source
+src.no_range=This server does not support resume. An interrupted download must start over.
+
+cat.search=Search
+cat.empty=Nothing found
+cat.count=%d of %d titles
+cat.sort=Sort
+cat.sort.name_asc=Name A-Z
+cat.sort.name_desc=Name Z-A
+cat.sort.size_asc=Size, smallest first
+cat.sort.size_desc=Size, largest first
+cat.sort.year_asc=Year, oldest first
+cat.sort.year_desc=Year, newest first
+cat.filter=Filter
+cat.filter.region=Region
+cat.filter.genre=Genre
+cat.filter.source=Source
+cat.filter.clear=Clear filters
+cat.already_have=Already downloaded
+
+info.id=Game ID
+info.region=Region
+info.publisher=Publisher
+info.year=Year
+info.genre=Genre
+info.players=Players
+info.size=Size
+info.unsure=Match uncertain
+info.no_data=No additional information
+info.probing=Reading disc header...
+info.not_gc=Not a valid GameCube image
+
+q.add=Add to queue
+q.remove=Remove from queue
+q.empty=Queue is empty
+q.start=Start
+q.pause=Pause
+q.waiting=Waiting
+q.running=Downloading
+q.paused=Paused
+q.verifying=Verifying
+q.done=Done
+q.failed=Failed
+q.resume_found=An unfinished download was found. Continue?
+q.progress=%s of %s - %s/s - %s remaining
+q.total=%d in queue, %s total
+q.verify_ok=Checksum matches
+q.verify_fail=Checksum does not match. File kept as %s
+q.disk_full=Not enough space on the target device
+
+kb.title=On-screen keyboard
+kb.ok=OK
+kb.cancel=Cancel
+kb.backspace=Delete
+kb.layout=Layout
+kb.space=Space
+
+set.language=Language
+set.art=Load cover art
+set.art_lang=Prefer covers in interface language
+set.probe=Read disc header for details
+set.verify=Verify checksum after download
+set.save=Save
+
+btn.ok=OK
+btn.cancel=Cancel
+btn.back=Back
+btn.yes=Yes
+btn.no=No
+
+# User interface (GX)
+ui.ok_hint=A / B  Continue
+ui.confirm_hint=A  Yes     B  No
+kb.layer=Layer
+kb.hints=A Type   B Delete   X Layer   Y Space   START Accept   Z Cancel
+menu.diag=Diagnostics
+hint.main=A Select     START + Z  Quit
+hint.catalog=A Details   Y Search   X Sort   B Back
+hint.detail=A Add to queue   X Read disc ID   B Back
+hint.queue=START Start   A Remove   X Clear finished   B Back
+hint.sources=A Load   Y Add   X Remove   B Back
+hint.settings=A Change   B Back
+hint.progress=B Cancel
+hint.diag=X Network test   B Back
+hint.back=B Back
+status.network=Network
+status.storage=Storage
+status.catalog=Catalog
+status.queue=Queue
+status.titles=%u titles
+status.waiting=%u waiting, %s
+src.loading=Loading source …
+src.hint_empty=Y adds a source. Or put sources.txt into %s.
+q.starting=Starting queue …
+q.cancelled=Cancelled. Progress is saved and will resume next time.
+q.already=Already in the queue.
+q.full=Queue is full.
+q.added=Added to queue
+q.no_dir=Cannot create the target folder.
+q.resumed=resumed
+q.crc_unusable=Checksum not verifiable after a crash
+q.conns=%d of %d connections active
+q.eta=about %s left
+dl.opening=Opening partial file …
+dl.creating=Creating file on the card …
+dl.connecting=Opening connections … %d of %d
+dl.connecting1=Connecting …
+dl.resuming=Resuming.
+info.url_fail=Cannot build address
+info.hdr_fail=Could not read the header.
+set.device=Device
+set.conns=Connections
+set.yes=yes
+set.no=no
+boot.storage=Looking for storage devices …
+boot.network=This can take a few seconds.
+
+# GameTDB
+set.gametdb=GameTDB database
+meta.none=not loaded – A loads it
+meta.count=%u games
+meta.updating=Loading the GameTDB database …
+meta.updating2=Fetching 2.3 MB and unpacking on the fly. Takes a minute or two.
+meta.done=%u GameCube games imported.
+meta.fail=Could not load the database
+info.developer=Developer
+info.guess=Matched by name, %u %% similarity
+info.cover_none=no cover
+hint.settings_db=A Change · on GameTDB: load   B Back
+
+cat.filter.all=all genres
+hint.catalog2=A Details   Y Search   X Sort   Z Genre   B Back
+meta.matching=Matching game info …
+
+cat.page=Page
+hint.catalog2=A Details   Y Search   X Sort   Z Genre   ◀ ▶ Page   B Back
+
+# Download screen, detail panel
+dl.upnext=Up next
+dl.upnext_none=Nothing else in the queue.
+hint.progress2=↑↓ Select   A Load next   B Cancel
+set.panel=Catalog view
+
+# Community
+com.discord=Follow us!
+com.subscribe=Feel free to support me with a subscription on YouTube!
+
+# Themes
+set.theme=Theme
+theme.konsolenschatz=Konsolenschatz
+theme.classic=Classic
+theme.black=Black
+theme.light=Light
+theme.purple=Purple
+theme.orange=Orange
+theme.pink=Pink
+theme.green=Green
+
+# Catalog views, socials
+menu.socials=Socials & Credits
+view.panel=List + details
+view.list=List only
+view.flow=Coverflow
+hint.catalog3=A Details  Y Search  X Sort  Z Genre  L/R Letter  START View  B Back
+hint.flow=◀ ▶ Browse  A Details  Y Search  Z Genre  L/R Letter  START View  B Back
+hint.genre=A Select   X Clear filter   B Back
+set.precache=Preload covers
+set.precache_go=A starts
+cache.progress=Cover %u of %u …   B cancels
+cache.done=%u of %u covers are on the card.

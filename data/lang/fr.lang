@@ -1,0 +1,202 @@
+# CubeFetch - Français
+lang.name=Français
+
+app.title=CubeFetch
+app.loading=Chargement...
+app.ready=Prêt
+
+menu.catalog=Catalogue
+menu.queue=Téléchargement
+menu.sources=Sources
+menu.settings=Paramètres
+menu.about=À propos
+
+net.connecting=Connexion au réseau...
+net.ok=Connecté - IP %s
+net.fail=Pas de connexion réseau
+net.adapter=Adaptateur : %s
+net.no_adapter=Aucun adaptateur réseau trouvé
+net.retry=Réessayer
+
+store.scanning=Recherche des supports...
+store.found=%d support(s) trouvé(s)
+store.none=Aucun support trouvé
+store.free=%s libres
+store.target=Dossier cible
+store.pick_target=Choisir le dossier cible
+store.new_folder=Nouveau dossier
+store.exi_warning=L'adaptateur réseau et la carte mémoire partagent un canal EXI. Cette combinaison peut être instable - une carte en Slot B ou un SD2SP2 est recommandé.
+
+src.none=Aucune source définie
+src.add=Ajouter une source
+src.edit=Modifier
+src.remove=Supprimer
+src.reload=Recharger
+src.enter_url=Saisir l'adresse
+src.name=Nom
+src.type=Type
+src.loaded=%d entrées de %d source(s)
+src.load_fail=Impossible de charger la source
+src.no_range=Ce serveur ne permet pas la reprise. Un téléchargement interrompu repart de zéro.
+
+cat.search=Rechercher
+cat.empty=Aucun résultat
+cat.count=%d sur %d titres
+cat.sort=Trier
+cat.sort.name_asc=Nom A-Z
+cat.sort.name_desc=Nom Z-A
+cat.sort.size_asc=Taille, croissante
+cat.sort.size_desc=Taille, décroissante
+cat.sort.year_asc=Année, plus ancien d'abord
+cat.sort.year_desc=Année, plus récent d'abord
+cat.filter=Filtre
+cat.filter.region=Région
+cat.filter.genre=Genre
+cat.filter.source=Source
+cat.filter.clear=Effacer les filtres
+cat.already_have=Déjà téléchargé
+
+info.id=ID du jeu
+info.region=Région
+info.publisher=Éditeur
+info.year=Année
+info.genre=Genre
+info.players=Joueurs
+info.size=Taille
+info.unsure=Correspondance incertaine
+info.no_data=Pas d'autres informations
+info.probing=Lecture de l'en-tête du disque...
+info.not_gc=Image GameCube non valide
+
+q.add=Ajouter à la file
+q.remove=Retirer de la file
+q.empty=La file est vide
+q.start=Démarrer
+q.pause=Pause
+q.waiting=En attente
+q.running=Téléchargement
+q.paused=En pause
+q.verifying=Vérification
+q.done=Terminé
+q.failed=Échec
+q.resume_found=Un téléchargement inachevé a été trouvé. Continuer ?
+q.progress=%s sur %s - %s/s - reste %s
+q.total=%d dans la file, %s au total
+q.verify_ok=La somme de contrôle correspond
+q.verify_fail=La somme de contrôle ne correspond pas. Fichier conservé sous %s
+q.disk_full=Pas assez d'espace sur le support cible
+
+kb.title=Clavier virtuel
+kb.ok=OK
+kb.cancel=Annuler
+kb.backspace=Effacer
+kb.layout=Disposition
+kb.space=Espace
+
+set.language=Langue
+set.art=Charger les jaquettes
+set.art_lang=Jaquettes dans la langue de l'interface
+set.probe=Lire l'en-tête du disque
+set.verify=Vérifier la somme après téléchargement
+set.save=Enregistrer
+
+btn.ok=OK
+btn.cancel=Annuler
+btn.back=Retour
+btn.yes=Oui
+btn.no=Non
+
+ui.ok_hint=A / B  Continuer
+ui.confirm_hint=A  Oui     B  Non
+kb.layer=Niveau
+kb.hints=A Saisir   B Effacer   X Niveau   Y Espace   START Valider   Z Annuler
+menu.diag=Diagnostic
+hint.main=A Choisir     START + Z  Quitter
+hint.catalog=A Détails   Y Rechercher   X Trier   B Retour
+hint.detail=A Ajouter à la file   X Lire l'ID   B Retour
+hint.queue=START Démarrer   A Retirer   X Vider les terminés   B Retour
+hint.sources=A Charger   Y Ajouter   X Supprimer   B Retour
+hint.settings=A Modifier   B Retour
+hint.progress=B Annuler
+hint.diag=X Test réseau   B Retour
+hint.back=B Retour
+status.network=Réseau
+status.storage=Stockage
+status.catalog=Catalogue
+status.queue=File d'attente
+status.titles=%u titres
+status.waiting=%u en attente, %s
+src.loading=Chargement de la source …
+src.hint_empty=Y ajoute une source. Ou placez sources.txt dans %s.
+q.starting=Démarrage de la file …
+q.cancelled=Annulé. La progression est enregistrée et reprendra la prochaine fois.
+q.already=Déjà dans la file.
+q.full=La file est pleine.
+q.added=Ajouté à la file
+q.no_dir=Impossible de créer le dossier cible.
+q.resumed=repris
+q.crc_unusable=Somme non vérifiable après un plantage
+q.conns=%d sur %d connexions actives
+q.eta=environ %s restant
+dl.opening=Ouverture du fichier partiel …
+dl.creating=Création du fichier sur la carte …
+dl.connecting=Ouverture des connexions … %d sur %d
+dl.connecting1=Connexion …
+dl.resuming=Reprise.
+info.url_fail=Impossible de construire l'adresse
+info.hdr_fail=Impossible de lire l'en-tête.
+set.device=Support
+set.conns=Connexions
+set.yes=oui
+set.no=non
+boot.storage=Recherche des supports …
+boot.network=Cela peut prendre quelques secondes.
+
+set.gametdb=Base GameTDB
+meta.none=non chargée – A pour charger
+meta.count=%u jeux
+meta.updating=Chargement de la base GameTDB …
+meta.updating2=Téléchargement de 2,3 Mo, décompressé à la volée. Une ou deux minutes.
+meta.done=%u jeux GameCube importés.
+meta.fail=Impossible de charger la base
+info.developer=Développeur
+info.guess=Trouvé par le nom, %u %% de similarité
+info.cover_none=pas de jaquette
+hint.settings_db=A Modifier · sur GameTDB : charger   B Retour
+
+cat.filter.all=tous les genres
+meta.matching=Association des infos de jeu …
+
+cat.page=Page
+hint.catalog2=A Détails   Y Rechercher   X Trier   Z Genre   ◀ ▶ Page   B Retour
+
+dl.upnext=À suivre
+dl.upnext_none=Rien d'autre dans la file.
+hint.progress2=↑↓ Choisir   A Charger ensuite   B Annuler
+set.panel=Vue du catalogue
+
+com.discord=Suivez-nous !
+com.subscribe=Soutenez-moi avec un abonnement sur YouTube !
+
+set.theme=Thème
+theme.konsolenschatz=Konsolenschatz
+theme.classic=Classique
+theme.black=Noir
+theme.light=Clair
+theme.purple=Violet
+theme.orange=Orange
+theme.pink=Rose
+theme.green=Vert
+
+# Catalog views, socials
+menu.socials=Réseaux & crédits
+view.panel=Liste + détails
+view.list=Liste seule
+view.flow=Coverflow
+hint.catalog3=A Détails  Y Rechercher  X Trier  Z Genre  L/R Lettre  START Vue  B Retour
+hint.flow=◀ ▶ Parcourir  A Détails  Y Rechercher  Z Genre  L/R Lettre  START Vue  B Retour
+hint.genre=A Choisir   X Effacer le filtre   B Retour
+set.precache=Précharger les jaquettes
+set.precache_go=A pour lancer
+cache.progress=Jaquette %u sur %u …   B annule
+cache.done=%u jaquettes sur %u sont sur la carte.

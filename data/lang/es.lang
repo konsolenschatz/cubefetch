@@ -1,0 +1,202 @@
+# CubeFetch - Español
+lang.name=Español
+
+app.title=CubeFetch
+app.loading=Cargando...
+app.ready=Listo
+
+menu.catalog=Catálogo
+menu.queue=Descarga
+menu.sources=Fuentes
+menu.settings=Ajustes
+menu.about=Acerca de
+
+net.connecting=Conectando a la red...
+net.ok=Conectado - IP %s
+net.fail=Sin conexión de red
+net.adapter=Adaptador: %s
+net.no_adapter=No se encontró adaptador de red
+net.retry=Reintentar
+
+store.scanning=Buscando dispositivos...
+store.found=%d dispositivo(s) encontrado(s)
+store.none=No se encontró ningún dispositivo
+store.free=%s libres
+store.target=Carpeta de destino
+store.pick_target=Elegir carpeta de destino
+store.new_folder=Nueva carpeta
+store.exi_warning=El adaptador de red y la tarjeta de memoria comparten un canal EXI. Esta combinación puede ser inestable - se recomienda una tarjeta en la ranura B o un SD2SP2.
+
+src.none=No hay fuentes definidas
+src.add=Añadir fuente
+src.edit=Editar
+src.remove=Quitar
+src.reload=Recargar
+src.enter_url=Introducir dirección
+src.name=Nombre
+src.type=Tipo
+src.loaded=%d entradas de %d fuente(s)
+src.load_fail=No se pudo cargar la fuente
+src.no_range=Este servidor no permite reanudar. Una descarga interrumpida empieza de nuevo.
+
+cat.search=Buscar
+cat.empty=Sin resultados
+cat.count=%d de %d títulos
+cat.sort=Ordenar
+cat.sort.name_asc=Nombre A-Z
+cat.sort.name_desc=Nombre Z-A
+cat.sort.size_asc=Tamaño, menor primero
+cat.sort.size_desc=Tamaño, mayor primero
+cat.sort.year_asc=Año, más antiguo primero
+cat.sort.year_desc=Año, más reciente primero
+cat.filter=Filtro
+cat.filter.region=Región
+cat.filter.genre=Género
+cat.filter.source=Fuente
+cat.filter.clear=Quitar filtros
+cat.already_have=Ya descargado
+
+info.id=ID del juego
+info.region=Región
+info.publisher=Editor
+info.year=Año
+info.genre=Género
+info.players=Jugadores
+info.size=Tamaño
+info.unsure=Coincidencia dudosa
+info.no_data=Sin más información
+info.probing=Leyendo cabecera del disco...
+info.not_gc=No es una imagen de GameCube válida
+
+q.add=Añadir a la cola
+q.remove=Quitar de la cola
+q.empty=La cola está vacía
+q.start=Iniciar
+q.pause=Pausa
+q.waiting=En espera
+q.running=Descargando
+q.paused=En pausa
+q.verifying=Verificando
+q.done=Hecho
+q.failed=Error
+q.resume_found=Se encontró una descarga sin terminar. ¿Continuar?
+q.progress=%s de %s - %s/s - faltan %s
+q.total=%d en la cola, %s en total
+q.verify_ok=La suma de comprobación coincide
+q.verify_fail=La suma de comprobación no coincide. Archivo guardado como %s
+q.disk_full=No hay espacio suficiente en el destino
+
+kb.title=Teclado en pantalla
+kb.ok=OK
+kb.cancel=Cancelar
+kb.backspace=Borrar
+kb.layout=Distribución
+kb.space=Espacio
+
+set.language=Idioma
+set.art=Cargar portadas
+set.art_lang=Portadas en el idioma de la interfaz
+set.probe=Leer cabecera del disco
+set.verify=Verificar suma tras la descarga
+set.save=Guardar
+
+btn.ok=OK
+btn.cancel=Cancelar
+btn.back=Atrás
+btn.yes=Sí
+btn.no=No
+
+ui.ok_hint=A / B  Continuar
+ui.confirm_hint=A  Sí     B  No
+kb.layer=Capa
+kb.hints=A Escribir   B Borrar   X Capa   Y Espacio   START Aceptar   Z Cancelar
+menu.diag=Diagnóstico
+hint.main=A Elegir     START + Z  Salir
+hint.catalog=A Detalles   Y Buscar   X Ordenar   B Atrás
+hint.detail=A Añadir a la cola   X Leer ID   B Atrás
+hint.queue=START Iniciar   A Quitar   X Borrar terminados   B Atrás
+hint.sources=A Cargar   Y Añadir   X Quitar   B Atrás
+hint.settings=A Cambiar   B Atrás
+hint.progress=B Cancelar
+hint.diag=X Prueba de red   B Atrás
+hint.back=B Atrás
+status.network=Red
+status.storage=Almacenamiento
+status.catalog=Catálogo
+status.queue=Cola
+status.titles=%u títulos
+status.waiting=%u en espera, %s
+src.loading=Cargando fuente …
+src.hint_empty=Y añade una fuente. O pon sources.txt en %s.
+q.starting=Iniciando la cola …
+q.cancelled=Cancelado. El progreso se guarda y continuará la próxima vez.
+q.already=Ya está en la cola.
+q.full=La cola está llena.
+q.added=Añadido a la cola
+q.no_dir=No se puede crear la carpeta de destino.
+q.resumed=reanudado
+q.crc_unusable=Suma no verificable tras un fallo
+q.conns=%d de %d conexiones activas
+q.eta=quedan unos %s
+dl.opening=Abriendo archivo parcial …
+dl.creating=Creando archivo en la tarjeta …
+dl.connecting=Abriendo conexiones … %d de %d
+dl.connecting1=Conectando …
+dl.resuming=Reanudando.
+info.url_fail=No se puede formar la dirección
+info.hdr_fail=No se pudo leer la cabecera.
+set.device=Dispositivo
+set.conns=Conexiones
+set.yes=sí
+set.no=no
+boot.storage=Buscando dispositivos …
+boot.network=Puede tardar unos segundos.
+
+set.gametdb=Base de datos GameTDB
+meta.none=no cargada – A para cargar
+meta.count=%u juegos
+meta.updating=Cargando la base de datos GameTDB …
+meta.updating2=Descargando 2,3 MB y descomprimiendo al vuelo. Uno o dos minutos.
+meta.done=%u juegos de GameCube importados.
+meta.fail=No se pudo cargar la base de datos
+info.developer=Desarrollador
+info.guess=Encontrado por nombre, %u %% de similitud
+info.cover_none=sin portada
+hint.settings_db=A Cambiar · en GameTDB: cargar   B Atrás
+
+cat.filter.all=todos los géneros
+meta.matching=Asignando información de juegos …
+
+cat.page=Página
+hint.catalog2=A Detalles   Y Buscar   X Ordenar   Z Género   ◀ ▶ Página   B Atrás
+
+dl.upnext=A continuación
+dl.upnext_none=No hay nada más en la cola.
+hint.progress2=↑↓ Elegir   A Cargar a continuación   B Cancelar
+set.panel=Vista del catálogo
+
+com.discord=¡Síguenos!
+com.subscribe=¡Apóyame con una suscripción en YouTube!
+
+set.theme=Tema
+theme.konsolenschatz=Konsolenschatz
+theme.classic=Clásico
+theme.black=Negro
+theme.light=Claro
+theme.purple=Morado
+theme.orange=Naranja
+theme.pink=Rosa
+theme.green=Verde
+
+# Catalog views, socials
+menu.socials=Redes y créditos
+view.panel=Lista + detalles
+view.list=Solo lista
+view.flow=Coverflow
+hint.catalog3=A Detalles  Y Buscar  X Ordenar  Z Género  L/R Letra  START Vista  B Atrás
+hint.flow=◀ ▶ Pasar  A Detalles  Y Buscar  Z Género  L/R Letra  START Vista  B Atrás
+hint.genre=A Elegir   X Quitar filtro   B Atrás
+set.precache=Precargar portadas
+set.precache_go=A para iniciar
+cache.progress=Portada %u de %u …   B cancela
+cache.done=%u de %u portadas están en la tarjeta.

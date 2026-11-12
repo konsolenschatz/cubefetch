@@ -1,0 +1,6 @@
+# Quellen immer mit LF im Repository. Gebaut wird unter msys2, und
+# devkitPPC-Makefiles vertragen CRLF in Rezepten nicht.
+* text=auto eol=lf
+*.zip binary
+*.ttf binary
+*.png binary

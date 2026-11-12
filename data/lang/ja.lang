@@ -1,0 +1,202 @@
+# CubeFetch - 日本語
+lang.name=日本語
+
+app.title=CubeFetch
+app.loading=読み込み中...
+app.ready=準備完了
+
+menu.catalog=カタログ
+menu.queue=ダウンロード
+menu.sources=ソース
+menu.settings=設定
+menu.about=情報
+
+net.connecting=ネットワークに接続中...
+net.ok=接続済み - IP %s
+net.fail=ネットワークに接続できません
+net.adapter=アダプター: %s
+net.no_adapter=ネットワークアダプターが見つかりません
+net.retry=再試行
+
+store.scanning=ストレージを検索中...
+store.found=%d 台のデバイスが見つかりました
+store.none=ストレージが見つかりません
+store.free=空き %s
+store.target=保存先フォルダー
+store.pick_target=保存先フォルダーを選択
+store.new_folder=新しいフォルダー
+store.exi_warning=ネットワークアダプターとメモリーカードが同じEXIチャンネルを使っています。不安定になる場合があります。スロットBのカードかSD2SP2をおすすめします。
+
+src.none=ソースがありません
+src.add=ソースを追加
+src.edit=編集
+src.remove=削除
+src.reload=再読み込み
+src.enter_url=アドレスを入力
+src.name=名前
+src.type=種類
+src.loaded=%d 件（ソース %d 個）
+src.load_fail=ソースを読み込めません
+src.no_range=このサーバーは再開に対応していません。中断したダウンロードは最初からになります。
+
+cat.search=検索
+cat.empty=見つかりません
+cat.count=%d / %d タイトル
+cat.sort=並べ替え
+cat.sort.name_asc=名前 A-Z
+cat.sort.name_desc=名前 Z-A
+cat.sort.size_asc=サイズ（小さい順）
+cat.sort.size_desc=サイズ（大きい順）
+cat.sort.year_asc=年（古い順）
+cat.sort.year_desc=年（新しい順）
+cat.filter=フィルター
+cat.filter.region=地域
+cat.filter.genre=ジャンル
+cat.filter.source=ソース
+cat.filter.clear=フィルターを解除
+cat.already_have=ダウンロード済み
+
+info.id=ゲームID
+info.region=地域
+info.publisher=発売元
+info.year=年
+info.genre=ジャンル
+info.players=プレイ人数
+info.size=サイズ
+info.unsure=一致が不確か
+info.no_data=追加情報はありません
+info.probing=ディスクヘッダーを読み込み中...
+info.not_gc=有効なゲームキューブイメージではありません
+
+q.add=キューに追加
+q.remove=キューから削除
+q.empty=キューは空です
+q.start=開始
+q.pause=一時停止
+q.waiting=待機中
+q.running=ダウンロード中
+q.paused=一時停止中
+q.verifying=検証中
+q.done=完了
+q.failed=失敗
+q.resume_found=未完了のダウンロードがあります。続けますか？
+q.progress=%s / %s - %s/秒 - 残り %s
+q.total=キュー %d 件、合計 %s
+q.verify_ok=チェックサムが一致しました
+q.verify_fail=チェックサムが一致しません。%s として保存しました
+q.disk_full=保存先の空き容量が足りません
+
+kb.title=ソフトウェアキーボード
+kb.ok=OK
+kb.cancel=キャンセル
+kb.backspace=削除
+kb.layout=配列
+kb.space=スペース
+
+set.language=言語
+set.art=カバー画像を読み込む
+set.art_lang=表示言語のカバーを優先
+set.probe=ディスクヘッダーを読む
+set.verify=ダウンロード後に検証
+set.save=保存
+
+btn.ok=OK
+btn.cancel=キャンセル
+btn.back=戻る
+btn.yes=はい
+btn.no=いいえ
+
+ui.ok_hint=A / B  続ける
+ui.confirm_hint=A  はい     B  いいえ
+kb.layer=レイヤー
+kb.hints=A 入力   B 削除   X レイヤー   Y スペース   START 決定   Z キャンセル
+menu.diag=診断
+hint.main=A 選択     START + Z  終了
+hint.catalog=A 詳細   Y 検索   X 並べ替え   B 戻る
+hint.detail=A キューに追加   X IDを読む   B 戻る
+hint.queue=START 開始   A 削除   X 完了分を消去   B 戻る
+hint.sources=A 読み込み   Y 追加   X 削除   B 戻る
+hint.settings=A 変更   B 戻る
+hint.progress=B キャンセル
+hint.diag=X ネットワークテスト   B 戻る
+hint.back=B 戻る
+status.network=ネットワーク
+status.storage=ストレージ
+status.catalog=カタログ
+status.queue=キュー
+status.titles=%u タイトル
+status.waiting=待機 %u 件、%s
+src.loading=ソースを読み込み中 …
+src.hint_empty=Yでソースを追加。または sources.txt を %s に置いてください。
+q.starting=キューを開始中 …
+q.cancelled=キャンセルしました。進行状況は保存され、次回再開します。
+q.already=すでにキューにあります。
+q.full=キューがいっぱいです。
+q.added=キューに追加しました
+q.no_dir=保存先フォルダーを作成できません。
+q.resumed=再開
+q.crc_unusable=クラッシュ後のためチェックサムを検証できません
+q.conns=接続 %d / %d
+q.eta=残り約 %s
+dl.opening=部分ファイルを開いています …
+dl.creating=カードにファイルを作成中 …
+dl.connecting=接続を開いています … %d / %d
+dl.connecting1=接続中 …
+dl.resuming=再開します。
+info.url_fail=アドレスを作成できません
+info.hdr_fail=ヘッダーを読み込めませんでした。
+set.device=デバイス
+set.conns=接続数
+set.yes=はい
+set.no=いいえ
+boot.storage=ストレージを検索中 …
+boot.network=数秒かかる場合があります。
+
+set.gametdb=GameTDBデータベース
+meta.none=未読み込み – Aで読み込む
+meta.count=%u 本
+meta.updating=GameTDBデータベースを読み込み中 …
+meta.updating2=2.3 MBを取得しながら展開します。1〜2分かかります。
+meta.done=ゲームキューブのゲーム %u 本を取り込みました。
+meta.fail=データベースを読み込めません
+info.developer=開発元
+info.guess=名前で一致、類似度 %u %%
+info.cover_none=カバーなし
+hint.settings_db=A 変更 · GameTDBで読み込み   B 戻る
+
+cat.filter.all=すべてのジャンル
+meta.matching=ゲーム情報を照合中 …
+
+cat.page=ページ
+hint.catalog2=A 詳細   Y 検索   X 並べ替え   Z ジャンル   ◀ ▶ ページ   B 戻る
+
+dl.upnext=次に読み込む
+dl.upnext_none=キューに他のタイトルはありません。
+hint.progress2=↑↓ 選択   A 次に読み込む   B キャンセル
+set.panel=カタログ表示
+
+com.discord=フォローしてね！
+com.subscribe=YouTubeのチャンネル登録で応援してください！
+
+set.theme=テーマ
+theme.konsolenschatz=Konsolenschatz
+theme.classic=クラシック
+theme.black=ブラック
+theme.light=ライト
+theme.purple=パープル
+theme.orange=オレンジ
+theme.pink=ピンク
+theme.green=グリーン
+
+# Catalog views, socials
+menu.socials=ソーシャル＆クレジット
+view.panel=リスト＋詳細
+view.list=リストのみ
+view.flow=カバーフロー
+hint.catalog3=A 詳細  Y 検索  X 並べ替え  Z ジャンル  L/R 頭文字  START 表示  B 戻る
+hint.flow=◀ ▶ 移動  A 詳細  Y 検索  Z ジャンル  L/R 頭文字  START 表示  B 戻る
+hint.genre=A 選択   X フィルター解除   B 戻る
+set.precache=カバーを事前読み込み
+set.precache_go=Aで開始
+cache.progress=カバー %u / %u …   Bで中止
+cache.done=%u / %u 件のカバーがカードにあります。

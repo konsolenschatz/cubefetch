@@ -1,0 +1,249 @@
+diff --git a/lwip/include/lwip/lwipopts.h b/lwip/include/lwip/lwipopts.h
+index ce9b123..2dc3e10 100644
+--- a/lwip/include/lwip/lwipopts.h
++++ b/lwip/include/lwip/lwipopts.h
+@@ -48,7 +48,7 @@
+ 
+ /* MEM_SIZE: the size of the heap memory. If the application will send
+ a lot of data that needs to be copied, this should be set high. */
+-#define MEM_SIZE				(192*1024)
++#define MEM_SIZE				(512*1024)
+ 
+ /* MEMP_NUM_PBUF: the number of memp struct pbufs. If the application
+    sends a lot of data out of ROM (or other static memory), this
+@@ -65,7 +65,7 @@ a lot of data that needs to be copied, this should be set high. */
+ #define MEMP_NUM_TCP_PCB_LISTEN 8
+ /* MEMP_NUM_TCP_SEG: the number of simultaneously queued TCP
+    segments. */
+-#define MEMP_NUM_TCP_SEG        128
++#define MEMP_NUM_TCP_SEG        256
+ 
+ /* The following four are used only with the sequential API and can be
+    set to 0 if the application only will use the raw API. */
+@@ -80,14 +80,14 @@ a lot of data that needs to be copied, this should be set high. */
+ /* MEMP_NUM_TCPIPMSG: the number of struct tcpip_msg, which is used
+    for sequential API communication and incoming packets. Used in
+    src/api/tcpip.c. */
+-#define MEMP_NUM_TCPIP_MSG      128
++#define MEMP_NUM_TCPIP_MSG      384
+ /* MEMP_NUM_SYS_TIMEOUT: the number of simulateously active
+    timeouts. */
+ #define MEMP_NUM_SYS_TIMEOUT    0
+ 
+ /* ---------- Pbuf options ---------- */
+ /* PBUF_POOL_SIZE: the number of buffers in the pbuf pool. */
+-#define PBUF_POOL_SIZE          128			//128
++#define PBUF_POOL_SIZE          512
+ 
+ /* PBUF_POOL_BUFSIZE: the size of each pbuf in the pbuf pool. */
+ #define PBUF_POOL_BUFSIZE       1600
+@@ -115,7 +115,7 @@ a lot of data that needs to be copied, this should be set high. */
+ #define TCP_SND_QUEUELEN        (36*TCP_SND_BUF/TCP_MSS)
+ 
+ /* TCP receive window. */
+-#define TCP_WND                 (2*TCP_MSS)
++#define TCP_WND                 (24*TCP_MSS)
+ 
+ /* Maximum number of retransmissions of data segments. */
+ #define TCP_MAXRTX              12
+diff --git a/lwip/netif/enc28j60if.c b/lwip/netif/enc28j60if.c
+index 28f40cc..264f36e 100644
+--- a/lwip/netif/enc28j60if.c
++++ b/lwip/netif/enc28j60if.c
+@@ -31,6 +31,7 @@ distribution.
+ #include <ogc/lwp.h>
+ #include <ogc/machine/asm.h>
+ #include <ogc/machine/processor.h>
++#include <ogc/lwp_watchdog.h>
+ #include <ogc/semaphore.h>
+ #include <ogc/timesupp.h>
+ #include <unistd.h>
+@@ -56,9 +57,16 @@ static vu32 *const _piReg = (u32 *)0xCC003000;
+ #define ENC28J60_EXI_SPEED(cmd) (((cmd) == ENC28J60_CMD_SRC) ? EXI_SPEED1MHZ : EXI_SPEED16MHZ)
+ #define ENC28J60_EXI_DUMMY(cmd) ((((cmd) >> 24) & 0x1F) < 0x1A)
+ 
++/* Der Chip hat 8 KB Speicher, hier urspruenglich halbiert: 4 KB fuer
++ * Empfang, 4 KB fuer Senden. 4 KB sind aber nur knapp drei Rahmen -
++ * bei jedem Schub laeuft der Empfang ueber, und TCP faengt an, verlorene
++ * Pakete nachzuschicken. Gesendet wird hoechstens ein Rahmen auf einmal
++ * (MAMXFL steht auf 2048), also bekommt der Empfang 6 KB.
++ *
++ * ERXST muss bei 0 bleiben, das verlangt Errata 5 des ENC28J60. */
+ #define ENC28J60_INIT_ERXST (0)
+-#define ENC28J60_INIT_ERXND (4096 - 1)
+-#define ENC28J60_INIT_ETXST (4096)
++#define ENC28J60_INIT_ERXND (6144 - 1)
++#define ENC28J60_INIT_ETXST (6144)
+ #define ENC28J60_INIT_ETXND (8192 - 1)
+ 
+ typedef enum {
+@@ -310,6 +318,48 @@ static struct netif *enc28j60_netif;
+ static u8 CurrBank[EXI_CHANNEL_MAX];
+ static u8 Dev[EXI_CHANNEL_MAX];
+ 
++/* ------------------------------------------------------------------ */
++/* Zeitmessung                                                        */
++/*                                                                    */
++/* Gemessen auf Hardware: der Treiber schafft 429 Rahmen je Sekunde,  */
++/* also 2,33 ms je Rahmen, waehrend die Leitung alle 1,23 ms einen    */
++/* liefert. Davon sind 0,73 ms die Nutzlast ueber EXI. Wo die         */
++/* restlichen 1,6 ms bleiben, laesst sich nicht erlesen - also wird   */
++/* gezaehlt. Die Zaehler kosten je Rahmen zwei Zeitabfragen.          */
++/* ------------------------------------------------------------------ */
++
++static struct {
++	u32 frames;     /* abgeholte Rahmen */
++	u32 batches;    /* Durchlaeufe des Unterbrechungsbehandlers */
++	u32 drops;      /* kein pbuf frei, Rahmen verworfen */
++	u32 maxbatch;   /* groesster Schub */
++	u64 t_total;    /* Ticks im Behandler */
++	u64 t_payload;  /* Ticks im Lesen der Nutzlast */
++	u64 t_input;    /* Ticks in pbuf_alloc und netif->input */
++} Stat;
++
++void enc28j60if_stats_reset(void)
++{
++	memset(&Stat, 0, sizeof(Stat));
++}
++
++/* out: frames, batches, drops, maxbatch, us_total, us_payload, us_input */
++void enc28j60if_stats(u32 *out, u32 n)
++{
++	u32 v[7];
++
++	v[0] = Stat.frames;
++	v[1] = Stat.batches;
++	v[2] = Stat.drops;
++	v[3] = Stat.maxbatch;
++	v[4] = (u32)ticks_to_microsecs(Stat.t_total);
++	v[5] = (u32)ticks_to_microsecs(Stat.t_payload);
++	v[6] = (u32)ticks_to_microsecs(Stat.t_input);
++
++	if (n > 7) n = 7;
++	memcpy(out, v, n * sizeof(u32));
++}
++
+ static bool ENC28J60_ReadCmd(s32 chan, u32 cmd, void *buf, u32 len)
+ {
+ 	bool err = false;
+@@ -492,37 +542,89 @@ static s32 ExiHandler(s32 chan, s32 dev)
+ 	if (!EXI_Lock(chan, dev, ExiHandler))
+ 		return FALSE;
+ 
++	u64 t_enter = gettime();
++	u32 got = 0;
++
+ 	u8 eie, eir;
+ 	ENC28J60_ClearBits(chan, ENC28J60_EIE, ENC28J60_EIE_INTIE);
+ 	ENC28J60_ReadReg(chan, ENC28J60_EIE, &eie);
+ 	ENC28J60_ReadReg(chan, ENC28J60_EIR, &eir);
+ 
+-	if (eir == 0) {
+-		u8 epktcnt;
+-		ENC28J60_ReadReg(chan, ENC28J60_EPKTCNT, &epktcnt);
+-		if (epktcnt > 0) eir |= ENC28J60_EIR_PKTIF;
+-	}
++	/* EPKTCNT immer lesen, nicht nur wenn EIR leer ist. Zum einen ist
++	 * PKTIF laut Errata des ENC28J60 nicht verlaesslich und EPKTCNT die
++	 * empfohlene Quelle. Zum anderen sagt es, wie viele Rahmen zu holen
++	 * sind - und das macht das erneute Lesen nach jedem Rahmen
++	 * ueberfluessig. Genau das war teuer: EPKTCNT liegt in Bank 1,
++	 * ERDPT und ERXRDPT in Bank 0, also kostete jeder Rahmen zwei
++	 * Bankumschaltungen oben drauf. */
++	u8 epktcnt = 0;
++	ENC28J60_ReadReg(chan, ENC28J60_EPKTCNT, &epktcnt);
++	if (epktcnt > 0) eir |= ENC28J60_EIR_PKTIF;
+ 
+ 	eir &= eie;
+ 
+ 	if (eir & ENC28J60_EIR_PKTIF) {
+-		u8 rsv[6];
+-		ENC28J60_ReadCmd(chan, ENC28J60_CMD_RBM, rsv, sizeof(rsv));
+-		u16 nextPacket = __lhbrx(rsv, 0);
+-		u16 byteCount = __lhbrx(rsv, 2);
+-		//u16 status = __lhbrx(rsv, 4);
+-
+-		struct pbuf *p = pbuf_alloc(PBUF_RAW, byteCount - 4, PBUF_POOL);
+-
+-		for (struct pbuf *q = p; q; q = q->next)
+-			ENC28J60_ReadCmd(chan, ENC28J60_CMD_RBM, q->payload, q->len);
+-
+-		if (p) enc28j60_netif->input(p, enc28j60_netif);
+-
+-		ENC28J60_WriteReg16(chan, ENC28J60_ERDPT, nextPacket);
+-		ENC28J60_WriteReg16(chan, ENC28J60_ERXRDPT, nextPacket == ENC28J60_INIT_ERXST ? ENC28J60_INIT_ERXND : nextPacket - 1);
++		/* Alle wartenden Pakete abholen, nicht nur eines.
++		 *
++		 * Vorher wurde je Unterbrechung genau ein Rahmen gelesen. Der
++		 * Empfangsspeicher des Chips ist 6 KB gross, also vier Rahmen;
++		 * ein Sender mit grossem Fenster schickt aber ein Dutzend
++		 * hintereinander. Was nicht hineinpasst, ist verloren, TCP
++		 * schickt es nach, und der Durchsatz bleibt bei einem Bruchteil
++		 * dessen stehen, was die Leitung koennte.
++		 *
++		 * net_input stellt die Pakete nur in die Mailbox des
++		 * Netzwerk-Threads, hier im Unterbrechungszusammenhang laeuft
++		 * also nichts vom Protokollstapel. Die Grenze ist trotzdem
++		 * gesetzt, damit ein Dauerstrom nicht alles andere aussperrt.
++		 *
++		 * Gezaehlt wird aus dem oben gelesenen EPKTCNT, ohne es
++		 * nachzufragen. Damit bleibt die Schleife vollstaendig in
++		 * Bank 0, und je Rahmen gehen sieben Buszugriffe statt zwoelf
++		 * ueber EXI - zwei davon tragen Daten, der Rest ist
++		 * Verwaltung. Kommt waehrenddessen etwas Neues an, bleibt
++		 * EPKTCNT ungleich Null und die naechste Unterbrechung holt
++		 * es. */
++		int budget = epktcnt > 16 ? 16 : epktcnt;
++
++		while (budget-- > 0) {
++			u8 rsv[6];
++			u64 t0, t1;
++
++			ENC28J60_ReadCmd(chan, ENC28J60_CMD_RBM, rsv, sizeof(rsv));
++			u16 nextPacket = __lhbrx(rsv, 0);
++			u16 byteCount = __lhbrx(rsv, 2);
++			//u16 status = __lhbrx(rsv, 4);
++
++			t0 = gettime();
++			struct pbuf *p = pbuf_alloc(PBUF_RAW, byteCount - 4, PBUF_POOL);
++			t1 = gettime();
++			Stat.t_input += diff_ticks(t0, t1);
++
++			if (!p)
++				Stat.drops++;
++
++			t0 = gettime();
++			for (struct pbuf *q = p; q; q = q->next)
++				ENC28J60_ReadCmd(chan, ENC28J60_CMD_RBM, q->payload, q->len);
++			t1 = gettime();
++			Stat.t_payload += diff_ticks(t0, t1);
++
++			t0 = gettime();
++			if (p) enc28j60_netif->input(p, enc28j60_netif);
++			t1 = gettime();
++			Stat.t_input += diff_ticks(t0, t1);
++
++			ENC28J60_WriteReg16(chan, ENC28J60_ERDPT, nextPacket);
++			ENC28J60_WriteReg16(chan, ENC28J60_ERXRDPT, nextPacket == ENC28J60_INIT_ERXST ? ENC28J60_INIT_ERXND : nextPacket - 1);
++
++			ENC28J60_SetBits(chan, ENC28J60_ECON2, ENC28J60_ECON2_PKTDEC);
++			got++;
++		}
+ 
+-		ENC28J60_SetBits(chan, ENC28J60_ECON2, ENC28J60_ECON2_PKTDEC);
++		Stat.frames += got;
++		if (got > Stat.maxbatch)
++			Stat.maxbatch = got;
+ 	}
+ 
+ 	if (eir & ENC28J60_EIR_LINKIF) {
+@@ -550,6 +652,9 @@ static s32 ExiHandler(s32 chan, s32 dev)
+ 
+ 	ENC28J60_SetBits(chan, ENC28J60_EIE, ENC28J60_EIE_INTIE);
+ 
++	Stat.batches++;
++	Stat.t_total += diff_ticks(t_enter, gettime());
++
+ 	EXI_Unlock(chan);
+ 	return TRUE;
+ }

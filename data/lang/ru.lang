@@ -1,0 +1,202 @@
+# CubeFetch - Русский
+lang.name=Русский
+
+app.title=CubeFetch
+app.loading=Загрузка...
+app.ready=Готово
+
+menu.catalog=Каталог
+menu.queue=Загрузка
+menu.sources=Источники
+menu.settings=Настройки
+menu.about=О программе
+
+net.connecting=Подключение к сети...
+net.ok=Подключено - IP %s
+net.fail=Нет подключения к сети
+net.adapter=Адаптер: %s
+net.no_adapter=Сетевой адаптер не найден
+net.retry=Повторить
+
+store.scanning=Поиск накопителей...
+store.found=Найдено накопителей: %d
+store.none=Накопители не найдены
+store.free=свободно %s
+store.target=Папка назначения
+store.pick_target=Выбор папки назначения
+store.new_folder=Новая папка
+store.exi_warning=Сетевой адаптер и карта памяти используют один канал EXI. Такое сочетание может работать нестабильно - рекомендуется карта в слоте B или SD2SP2.
+
+src.none=Источники не заданы
+src.add=Добавить источник
+src.edit=Изменить
+src.remove=Удалить
+src.reload=Обновить
+src.enter_url=Введите адрес
+src.name=Название
+src.type=Тип
+src.loaded=%d записей из источников: %d
+src.load_fail=Не удалось загрузить источник
+src.no_range=Сервер не поддерживает докачку. Прерванная загрузка начнётся заново.
+
+cat.search=Поиск
+cat.empty=Ничего не найдено
+cat.count=%d из %d игр
+cat.sort=Сортировка
+cat.sort.name_asc=Название А-Я
+cat.sort.name_desc=Название Я-А
+cat.sort.size_asc=Размер, по возрастанию
+cat.sort.size_desc=Размер, по убыванию
+cat.sort.year_asc=Год, сначала старые
+cat.sort.year_desc=Год, сначала новые
+cat.filter=Фильтр
+cat.filter.region=Регион
+cat.filter.genre=Жанр
+cat.filter.source=Источник
+cat.filter.clear=Сбросить фильтры
+cat.already_have=Уже загружено
+
+info.id=ID игры
+info.region=Регион
+info.publisher=Издатель
+info.year=Год
+info.genre=Жанр
+info.players=Игроки
+info.size=Размер
+info.unsure=Совпадение неточное
+info.no_data=Нет дополнительной информации
+info.probing=Чтение заголовка диска...
+info.not_gc=Недопустимый образ GameCube
+
+q.add=В очередь
+q.remove=Убрать из очереди
+q.empty=Очередь пуста
+q.start=Старт
+q.pause=Пауза
+q.waiting=Ожидает
+q.running=Загрузка
+q.paused=Приостановлено
+q.verifying=Проверка
+q.done=Готово
+q.failed=Ошибка
+q.resume_found=Найдена незавершённая загрузка. Продолжить?
+q.progress=%s из %s - %s/с - осталось %s
+q.total=В очереди: %d, всего %s
+q.verify_ok=Контрольная сумма совпадает
+q.verify_fail=Контрольная сумма не совпадает. Файл сохранён как %s
+q.disk_full=Недостаточно места на накопителе
+
+kb.title=Экранная клавиатура
+kb.ok=OK
+kb.cancel=Отмена
+kb.backspace=Стереть
+kb.layout=Раскладка
+kb.space=Пробел
+
+set.language=Язык
+set.art=Загружать обложки
+set.art_lang=Обложки на языке интерфейса
+set.probe=Читать заголовок диска
+set.verify=Проверять сумму после загрузки
+set.save=Сохранить
+
+btn.ok=OK
+btn.cancel=Отмена
+btn.back=Назад
+btn.yes=Да
+btn.no=Нет
+
+ui.ok_hint=A / B  Далее
+ui.confirm_hint=A  Да     B  Нет
+kb.layer=Слой
+kb.hints=A Ввод   B Стереть   X Слой   Y Пробел   START Принять   Z Отмена
+menu.diag=Диагностика
+hint.main=A Выбрать     START + Z  Выход
+hint.catalog=A Подробно   Y Поиск   X Сортировка   B Назад
+hint.detail=A В очередь   X Прочитать ID   B Назад
+hint.queue=START Старт   A Убрать   X Очистить готовые   B Назад
+hint.sources=A Загрузить   Y Добавить   X Удалить   B Назад
+hint.settings=A Изменить   B Назад
+hint.progress=B Отмена
+hint.diag=X Тест сети   B Назад
+hint.back=B Назад
+status.network=Сеть
+status.storage=Накопитель
+status.catalog=Каталог
+status.queue=Очередь
+status.titles=Игр: %u
+status.waiting=Ожидает: %u, %s
+src.loading=Загрузка источника …
+src.hint_empty=Y добавляет источник. Или положите sources.txt в %s.
+q.starting=Запуск очереди …
+q.cancelled=Отменено. Прогресс сохранён и продолжится в следующий раз.
+q.already=Уже в очереди.
+q.full=Очередь заполнена.
+q.added=Добавлено в очередь
+q.no_dir=Не удалось создать папку назначения.
+q.resumed=продолжено
+q.crc_unusable=Сумму нельзя проверить после сбоя
+q.conns=Активно соединений: %d из %d
+q.eta=осталось около %s
+dl.opening=Открытие частичного файла …
+dl.creating=Создание файла на карте …
+dl.connecting=Открытие соединений … %d из %d
+dl.connecting1=Подключение …
+dl.resuming=Продолжение.
+info.url_fail=Не удалось составить адрес
+info.hdr_fail=Не удалось прочитать заголовок.
+set.device=Накопитель
+set.conns=Соединения
+set.yes=да
+set.no=нет
+boot.storage=Поиск накопителей …
+boot.network=Это может занять несколько секунд.
+
+set.gametdb=База GameTDB
+meta.none=не загружена – A загрузить
+meta.count=Игр: %u
+meta.updating=Загрузка базы GameTDB …
+meta.updating2=Загрузка 2,3 МБ с распаковкой на лету. Минута-две.
+meta.done=Импортировано игр GameCube: %u.
+meta.fail=Не удалось загрузить базу
+info.developer=Разработчик
+info.guess=Найдено по названию, сходство %u %%
+info.cover_none=нет обложки
+hint.settings_db=A Изменить · на GameTDB: загрузить   B Назад
+
+cat.filter.all=все жанры
+meta.matching=Сопоставление данных об играх …
+
+cat.page=Стр.
+hint.catalog2=A Подробно   Y Поиск   X Сортировка   Z Жанр   ◀ ▶ Стр.   B Назад
+
+dl.upnext=Далее
+dl.upnext_none=В очереди больше ничего нет.
+hint.progress2=↑↓ Выбор   A Загрузить следующим   B Отмена
+set.panel=Вид каталога
+
+com.discord=Подписывайтесь!
+com.subscribe=Поддержите меня подпиской на YouTube!
+
+set.theme=Тема
+theme.konsolenschatz=Konsolenschatz
+theme.classic=Классическая
+theme.black=Чёрная
+theme.light=Светлая
+theme.purple=Фиолетовая
+theme.orange=Оранжевая
+theme.pink=Розовая
+theme.green=Зелёная
+
+# Catalog views, socials
+menu.socials=Соцсети и авторы
+view.panel=Список + детали
+view.list=Только список
+view.flow=Coverflow
+hint.catalog3=A Подробно  Y Поиск  X Сорт.  Z Жанр  L/R Буква  START Вид  B Назад
+hint.flow=◀ ▶ Листать  A Подробно  Y Поиск  Z Жанр  L/R Буква  START Вид  B Назад
+hint.genre=A Выбрать   X Сбросить фильтр   B Назад
+set.precache=Загрузить обложки
+set.precache_go=A начать
+cache.progress=Обложка %u из %u …   B отмена
+cache.done=На карте %u из %u обложек.

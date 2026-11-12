@@ -1,0 +1,202 @@
+# CubeFetch - Italiano
+lang.name=Italiano
+
+app.title=CubeFetch
+app.loading=Caricamento...
+app.ready=Pronto
+
+menu.catalog=Catalogo
+menu.queue=Download
+menu.sources=Fonti
+menu.settings=Impostazioni
+menu.about=Informazioni
+
+net.connecting=Connessione alla rete...
+net.ok=Connesso - IP %s
+net.fail=Nessuna connessione di rete
+net.adapter=Adattatore: %s
+net.no_adapter=Nessun adattatore di rete trovato
+net.retry=Riprova
+
+store.scanning=Ricerca dei supporti...
+store.found=%d supporto/i trovato/i
+store.none=Nessun supporto trovato
+store.free=%s liberi
+store.target=Cartella di destinazione
+store.pick_target=Scegli la cartella di destinazione
+store.new_folder=Nuova cartella
+store.exi_warning=L'adattatore di rete e la memory card condividono un canale EXI. Questa combinazione può essere instabile - si consiglia una scheda nello slot B o un SD2SP2.
+
+src.none=Nessuna fonte definita
+src.add=Aggiungi fonte
+src.edit=Modifica
+src.remove=Rimuovi
+src.reload=Ricarica
+src.enter_url=Inserisci indirizzo
+src.name=Nome
+src.type=Tipo
+src.loaded=%d voci da %d fonte/i
+src.load_fail=Impossibile caricare la fonte
+src.no_range=Questo server non supporta la ripresa. Un download interrotto ricomincia da capo.
+
+cat.search=Cerca
+cat.empty=Nessun risultato
+cat.count=%d di %d titoli
+cat.sort=Ordina
+cat.sort.name_asc=Nome A-Z
+cat.sort.name_desc=Nome Z-A
+cat.sort.size_asc=Dimensione, crescente
+cat.sort.size_desc=Dimensione, decrescente
+cat.sort.year_asc=Anno, dal più vecchio
+cat.sort.year_desc=Anno, dal più recente
+cat.filter=Filtro
+cat.filter.region=Regione
+cat.filter.genre=Genere
+cat.filter.source=Fonte
+cat.filter.clear=Rimuovi filtri
+cat.already_have=Già scaricato
+
+info.id=ID gioco
+info.region=Regione
+info.publisher=Editore
+info.year=Anno
+info.genre=Genere
+info.players=Giocatori
+info.size=Dimensione
+info.unsure=Corrispondenza incerta
+info.no_data=Nessuna altra informazione
+info.probing=Lettura intestazione del disco...
+info.not_gc=Immagine GameCube non valida
+
+q.add=Aggiungi alla coda
+q.remove=Rimuovi dalla coda
+q.empty=La coda è vuota
+q.start=Avvia
+q.pause=Pausa
+q.waiting=In attesa
+q.running=Download in corso
+q.paused=In pausa
+q.verifying=Verifica
+q.done=Completato
+q.failed=Non riuscito
+q.resume_found=Trovato un download incompleto. Continuare?
+q.progress=%s di %s - %s/s - mancano %s
+q.total=%d in coda, %s in totale
+q.verify_ok=Il checksum corrisponde
+q.verify_fail=Il checksum non corrisponde. File conservato come %s
+q.disk_full=Spazio insufficiente sul supporto di destinazione
+
+kb.title=Tastiera su schermo
+kb.ok=OK
+kb.cancel=Annulla
+kb.backspace=Cancella
+kb.layout=Layout
+kb.space=Spazio
+
+set.language=Lingua
+set.art=Carica copertine
+set.art_lang=Copertine nella lingua dell'interfaccia
+set.probe=Leggi intestazione del disco
+set.verify=Verifica checksum dopo il download
+set.save=Salva
+
+btn.ok=OK
+btn.cancel=Annulla
+btn.back=Indietro
+btn.yes=Sì
+btn.no=No
+
+ui.ok_hint=A / B  Continua
+ui.confirm_hint=A  Sì     B  No
+kb.layer=Livello
+kb.hints=A Scrivi   B Cancella   X Livello   Y Spazio   START Conferma   Z Annulla
+menu.diag=Diagnostica
+hint.main=A Seleziona     START + Z  Esci
+hint.catalog=A Dettagli   Y Cerca   X Ordina   B Indietro
+hint.detail=A Aggiungi alla coda   X Leggi ID   B Indietro
+hint.queue=START Avvia   A Rimuovi   X Pulisci completati   B Indietro
+hint.sources=A Carica   Y Aggiungi   X Rimuovi   B Indietro
+hint.settings=A Cambia   B Indietro
+hint.progress=B Annulla
+hint.diag=X Test di rete   B Indietro
+hint.back=B Indietro
+status.network=Rete
+status.storage=Archiviazione
+status.catalog=Catalogo
+status.queue=Coda
+status.titles=%u titoli
+status.waiting=%u in attesa, %s
+src.loading=Caricamento fonte …
+src.hint_empty=Y aggiunge una fonte. Oppure metti sources.txt in %s.
+q.starting=Avvio della coda …
+q.cancelled=Annullato. I progressi sono salvati e riprenderanno la prossima volta.
+q.already=Già in coda.
+q.full=La coda è piena.
+q.added=Aggiunto alla coda
+q.no_dir=Impossibile creare la cartella di destinazione.
+q.resumed=ripreso
+q.crc_unusable=Checksum non verificabile dopo un arresto
+q.conns=%d di %d connessioni attive
+q.eta=circa %s rimanenti
+dl.opening=Apertura file parziale …
+dl.creating=Creazione file sulla scheda …
+dl.connecting=Apertura connessioni … %d di %d
+dl.connecting1=Connessione …
+dl.resuming=Ripresa.
+info.url_fail=Impossibile costruire l'indirizzo
+info.hdr_fail=Impossibile leggere l'intestazione.
+set.device=Supporto
+set.conns=Connessioni
+set.yes=sì
+set.no=no
+boot.storage=Ricerca dei supporti …
+boot.network=Può richiedere qualche secondo.
+
+set.gametdb=Database GameTDB
+meta.none=non caricato – A per caricare
+meta.count=%u giochi
+meta.updating=Caricamento del database GameTDB …
+meta.updating2=Scarico 2,3 MB e decomprimo al volo. Uno o due minuti.
+meta.done=%u giochi GameCube importati.
+meta.fail=Impossibile caricare il database
+info.developer=Sviluppatore
+info.guess=Trovato per nome, %u %% di somiglianza
+info.cover_none=nessuna copertina
+hint.settings_db=A Cambia · su GameTDB: carica   B Indietro
+
+cat.filter.all=tutti i generi
+meta.matching=Abbinamento informazioni giochi …
+
+cat.page=Pagina
+hint.catalog2=A Dettagli   Y Cerca   X Ordina   Z Genere   ◀ ▶ Pagina   B Indietro
+
+dl.upnext=Prossimi
+dl.upnext_none=Nient'altro in coda.
+hint.progress2=↑↓ Seleziona   A Scarica dopo   B Annulla
+set.panel=Vista catalogo
+
+com.discord=Seguici!
+com.subscribe=Sostienimi con un'iscrizione su YouTube!
+
+set.theme=Tema
+theme.konsolenschatz=Konsolenschatz
+theme.classic=Classico
+theme.black=Nero
+theme.light=Chiaro
+theme.purple=Viola
+theme.orange=Arancione
+theme.pink=Rosa
+theme.green=Verde
+
+# Catalog views, socials
+menu.socials=Social e crediti
+view.panel=Lista + dettagli
+view.list=Solo lista
+view.flow=Coverflow
+hint.catalog3=A Dettagli  Y Cerca  X Ordina  Z Genere  L/R Lettera  START Vista  B Indietro
+hint.flow=◀ ▶ Sfoglia  A Dettagli  Y Cerca  Z Genere  L/R Lettera  START Vista  B Indietro
+hint.genre=A Scegli   X Rimuovi filtro   B Indietro
+set.precache=Precarica copertine
+set.precache_go=A per avviare
+cache.progress=Copertina %u di %u …   B annulla
+cache.done=%u copertine su %u sono sulla scheda.

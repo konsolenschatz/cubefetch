@@ -1,0 +1,10 @@
+build/
+*.elf
+*.dol
+*.map
+tests/build/
+tests/run_tests
+tests/*.exe
+dist/
+cubefetch-sd.zip
+toolchain/

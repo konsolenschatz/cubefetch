@@ -1,0 +1,208 @@
+# CubeFetch - Deutsch
+lang.name=Deutsch
+
+app.title=CubeFetch
+app.loading=Lädt...
+app.ready=Bereit
+
+menu.catalog=Katalog
+menu.queue=Download
+menu.sources=Quellen
+menu.settings=Einstellungen
+menu.about=Über
+
+net.connecting=Verbindung wird aufgebaut...
+net.ok=Verbunden - IP %s
+net.fail=Keine Netzwerkverbindung
+net.adapter=Adapter: %s
+net.no_adapter=Kein Netzwerkadapter gefunden
+net.retry=Erneut versuchen
+
+store.scanning=Speichergeräte werden gesucht...
+store.found=%d Gerät(e) gefunden
+store.none=Kein Speichergerät gefunden
+store.free=%s frei
+store.target=Zielordner
+store.pick_target=Zielordner wählen
+store.new_folder=Neuer Ordner
+store.exi_warning=Netzwerkadapter und Speicherkarte liegen auf demselben EXI-Kanal. Diese Kombination kann instabil sein - empfohlen ist eine Karte in Slot B oder ein SD2SP2.
+
+src.none=Keine Quellen eingetragen
+src.add=Quelle hinzufügen
+src.edit=Bearbeiten
+src.remove=Entfernen
+src.reload=Neu laden
+src.enter_url=Adresse eingeben
+src.name=Name
+src.type=Typ
+src.loaded=%d Einträge aus %d Quelle(n)
+src.load_fail=Quelle konnte nicht geladen werden
+src.no_range=Dieser Server unterstützt kein Fortsetzen. Ein abgebrochener Download muss neu beginnen.
+
+cat.search=Suche
+cat.empty=Nichts gefunden
+cat.count=%d von %d Titeln
+cat.sort=Sortierung
+cat.sort.name_asc=Name A-Z
+cat.sort.name_desc=Name Z-A
+cat.sort.size_asc=Größe, kleinste zuerst
+cat.sort.size_desc=Größe, größte zuerst
+cat.sort.year_asc=Jahr, älteste zuerst
+cat.sort.year_desc=Jahr, neueste zuerst
+cat.filter=Filter
+cat.filter.region=Region
+cat.filter.genre=Genre
+cat.filter.source=Quelle
+cat.filter.clear=Filter zurücksetzen
+cat.already_have=Bereits heruntergeladen
+
+info.id=Spiel-ID
+info.region=Region
+info.publisher=Verlag
+info.year=Jahr
+info.genre=Genre
+info.players=Spieler
+info.size=Größe
+info.unsure=Zuordnung unsicher
+info.no_data=Keine weiteren Informationen
+info.probing=Disc-Header wird gelesen...
+info.not_gc=Kein gültiges GameCube-Image
+
+q.add=Zur Warteschlange
+q.remove=Aus Warteschlange entfernen
+q.empty=Warteschlange ist leer
+q.start=Starten
+q.pause=Anhalten
+q.waiting=Wartet
+q.running=Lädt
+q.paused=Angehalten
+q.verifying=Wird geprüft
+q.done=Fertig
+q.failed=Fehlgeschlagen
+q.resume_found=Ein unvollständiger Download wurde gefunden. Fortsetzen?
+q.progress=%s von %s - %s/s - %s übrig
+q.total=%d in der Warteschlange, %s gesamt
+q.verify_ok=Prüfsumme stimmt
+q.verify_fail=Prüfsumme stimmt nicht. Datei behalten als %s
+q.disk_full=Nicht genug Platz auf dem Zielgerät
+
+kb.title=Bildschirmtastatur
+kb.ok=Übernehmen
+kb.cancel=Abbrechen
+kb.backspace=Löschen
+kb.layout=Belegung
+kb.space=Leerzeichen
+
+set.language=Sprache
+set.art=Vorschaubilder laden
+set.art_lang=Packungen in Oberflächensprache bevorzugen
+set.probe=Disc-Header für Details lesen
+set.verify=Prüfsumme nach dem Download prüfen
+set.save=Speichern
+
+btn.ok=OK
+btn.cancel=Abbrechen
+btn.back=Zurück
+btn.yes=Ja
+btn.no=Nein
+
+# Oberflaeche (GX)
+ui.ok_hint=A / B  Weiter
+ui.confirm_hint=A  Ja     B  Nein
+kb.layer=Ebene
+kb.hints=A Zeichen   B Löschen   X Ebene   Y Leerzeichen   START Übernehmen   Z Abbruch
+menu.diag=Diagnose
+hint.main=A Wählen     START + Z  Beenden
+hint.catalog=A Details   Y Suche   X Sortierung   B Zurück
+hint.detail=A In die Warteschlange   X Disc-ID lesen   B Zurück
+hint.queue=START Starten   A Entfernen   X Fertige entfernen   B Zurück
+hint.sources=A Laden   Y Hinzufügen   X Entfernen   B Zurück
+hint.settings=A Ändern   B Zurück
+hint.progress=B Abbrechen
+hint.diag=X Netztest   B Zurück
+hint.back=B Zurück
+status.network=Netzwerk
+status.storage=Speicher
+status.catalog=Katalog
+status.queue=Warteschlange
+status.titles=%u Titel
+status.waiting=%u wartend, %s
+src.loading=Quelle wird geladen …
+src.hint_empty=Y legt eine Quelle an. Oder sources.txt in %s ablegen.
+q.starting=Warteschlange wird gestartet …
+q.cancelled=Abgebrochen. Der Stand ist gesichert, beim nächsten Start wird fortgesetzt.
+q.already=Steht bereits in der Warteschlange.
+q.full=Warteschlange ist voll.
+q.added=In die Warteschlange gelegt
+q.no_dir=Zielordner kann nicht angelegt werden.
+q.resumed=fortgesetzt
+q.crc_unusable=Prüfsumme nach Absturz nicht prüfbar
+q.conns=%d von %d Verbindungen aktiv
+q.eta=noch etwa %s
+dl.opening=Angefangene Datei wird geöffnet …
+dl.creating=Datei wird auf der Karte angelegt …
+dl.connecting=Verbindungen werden aufgebaut … %d von %d
+dl.connecting1=Verbindung wird aufgebaut …
+dl.resuming=Es wird fortgesetzt.
+info.url_fail=Adresse nicht bildbar
+info.hdr_fail=Header konnte nicht gelesen werden.
+set.device=Gerät
+set.conns=Verbindungen
+set.yes=ja
+set.no=nein
+boot.storage=Speichergeräte werden gesucht …
+boot.network=Das kann einige Sekunden dauern.
+
+# GameTDB
+set.gametdb=GameTDB-Datenbank
+meta.none=nicht geladen – A lädt sie
+meta.count=%u Spiele
+meta.updating=GameTDB-Datenbank wird geladen …
+meta.updating2=2,3 MB werden geholt und dabei entpackt. Das dauert ein bis zwei Minuten.
+meta.done=%u GameCube-Spiele übernommen.
+meta.fail=Datenbank konnte nicht geladen werden
+info.developer=Entwickler
+info.guess=Zuordnung über den Namen, %u %% Ähnlichkeit
+info.cover_none=kein Cover
+hint.settings_db=A Ändern · bei GameTDB: laden   B Zurück
+
+cat.filter.all=alle Genres
+hint.catalog2=A Details   Y Suche   X Sortierung   Z Genre   B Zurück
+meta.matching=Spielinfos werden zugeordnet …
+
+cat.page=Seite
+hint.catalog2=A Details   Y Suche   X Sortierung   Z Genre   ◀ ▶ Seite   B Zurück
+
+# Download-Bildschirm, Detailfeld
+dl.upnext=Als Nächstes
+dl.upnext_none=Nichts weiter in der Warteschlange.
+hint.progress2=↑↓ Auswählen   A Als Nächstes laden   B Abbrechen
+set.panel=Katalog-Ansicht
+
+# Community
+com.discord=Folge uns!
+com.subscribe=Unterstützt mich gerne mit einem Abo auf YouTube!
+
+# Designs
+set.theme=Design
+theme.konsolenschatz=Konsolenschatz
+theme.classic=Klassisch
+theme.black=Schwarz
+theme.light=Hell
+theme.purple=Lila
+theme.orange=Orange
+theme.pink=Pink
+theme.green=Grün
+
+# Catalog views, socials
+menu.socials=Socials & Credits
+view.panel=Liste + Details
+view.list=Nur Liste
+view.flow=Coverflow
+hint.catalog3=A Details  Y Suche  X Sortieren  Z Genre  L/R Buchstabe  START Ansicht  B Zurück
+hint.flow=◀ ▶ Blättern  A Details  Y Suche  Z Genre  L/R Buchstabe  START Ansicht  B Zurück
+hint.genre=A Wählen   X Filter löschen   B Zurück
+set.precache=Cover vorladen
+set.precache_go=A startet
+cache.progress=Cover %u von %u …   B bricht ab
+cache.done=%u von %u Covern liegen auf der Karte.

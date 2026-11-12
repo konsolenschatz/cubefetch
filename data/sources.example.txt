@@ -1,0 +1,18 @@
+# CubeFetch - Quellen / Sources
+#
+# Nach /cubefetch/sources.txt auf das Speichergerät kopieren.
+# Copy to /cubefetch/sources.txt on your storage device.
+#
+# Format:  <typ> | <anzeigename> | <url>
+#   autoidx  Verzeichnislisting von Apache/nginx/lighttpd/Caddy
+#   manifest CubeFetch-JSON (siehe docs/SOURCE-FORMAT.md)
+#
+# Der Typ darf weggelassen werden, dann wird er aus der URL erraten.
+# The type may be omitted; it is then guessed from the URL.
+#
+# Es werden absichtlich keine Quellen mitgeliefert.
+# No sources are shipped on purpose.
+
+# Eigener Server im Heimnetz / your own server on the LAN:
+# autoidx  | Heimserver      | http://192.168.1.50/gc/
+# manifest | Kuratierte Liste | http://192.168.1.50/gc/index.json
