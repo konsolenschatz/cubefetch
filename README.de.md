@@ -150,6 +150,11 @@ Anleitung für die Konsole: [docs/TESTING.md](docs/TESTING.md).
 - [docs/METADATA.md](docs/METADATA.md) — Zuordnung von Bildern und Spielinfos
 - [docs/TESTING.md](docs/TESTING.md) — auf der Konsole testen
 
+## Credits
+
+- **Konsolenschatz** — Autor
+- **[Nightmare3500](https://github.com/Nightmare3500)** — Betatest
+
 ## Lizenz
 
 CubeFetch ist Open Source unter der [MIT-Lizenz](LICENSE): frei nutzbar,

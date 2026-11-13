@@ -132,6 +132,11 @@ Console test guide: [docs/TESTING.md](docs/TESTING.md) (German).
 - YouTube: https://www.youtube.com/@Konsolenschatz — a subscription is the
   best way to support the project.
 
+## Credits
+
+- **Konsolenschatz** — author
+- **[Nightmare3500](https://github.com/Nightmare3500)** — beta testing
+
 ## License
 
 CubeFetch is open source under the [MIT License](LICENSE) — use, modify and
